@@ -32,11 +32,3 @@ def clue_display(hint):
 
 if __name__ == '__main__':
     app.run(debug=True)
-=======
-from flask import Flask
-app = Flask(__name__)
-
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
->>>>>>> d6ec66d29f915aba7606669f566ea44a3fb53139
