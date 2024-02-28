@@ -2,9 +2,42 @@
 <html>
 <head>
     <title>Clue Giver Page</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        input[type="text"] {
+            font-size: 2vw;
+            padding: 10px;
+            margin: 10px;
+            width: 50%;
+        }
+        input[type="submit"] {
+            font-size: 2vw;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
 <body>
-    <h1>Type your hint</h1>
     <form action="{{ url_for('clue_giver') }}" method="post">
         <input type="text" name="hint" required>
         <input type="submit" value="Submit">

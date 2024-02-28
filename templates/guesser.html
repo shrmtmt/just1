@@ -12,26 +12,28 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 10vw; /* 文字サイズを大きく設定 */
-            text-align: center;
+            overflow: hidden;
         }
         #countdown {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            width: 100%;
+            white-space: nowrap;
         }
     </style>
     <script>
+        function adjustFontSize(element) {
+            var fontSize = Math.min(window.innerWidth / element.textContent.length, window.innerHeight);
+            element.style.fontSize = fontSize + 'px';
+        }
+
         function startCountdown(seconds, display, word) {
             var counter = seconds;
             var interval = setInterval(function() {
                 display.textContent = counter;
+                adjustFontSize(display);
                 counter--;
                 if (counter < 0) {
                     clearInterval(interval);
                     display.textContent = word;
+                    adjustFontSize(display);
                 }
             }, 1000);
         }
@@ -41,10 +43,14 @@
             var word = "{{ word }}";
             startCountdown(3, display, word);
         };
+
+        window.onresize = function() {
+            var display = document.querySelector('#countdown');
+            adjustFontSize(display);
+        };
     </script>
 </head>
 <body>
     <div id="countdown">3</div>
-    <a href="{{ url_for('index') }}" style="color: white;"><button>Back to Main</button></a>
 </body>
 </html>

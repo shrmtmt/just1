@@ -6,16 +6,36 @@
         body, html {
             height: 100%;
             margin: 0;
+            padding: 0;
             background-color: black;
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 5vw;
+            overflow: hidden;
+        }
+        #hint {
+            white-space: nowrap;
         }
     </style>
+    <script>
+        function adjustFontSize(element) {
+            var fontSize = Math.min(window.innerWidth / element.textContent.length, window.innerHeight);
+            element.style.fontSize = fontSize + 'px';
+        }
+
+        window.onload = function () {
+            var hintElement = document.querySelector('#hint');
+            adjustFontSize(hintElement);
+        };
+
+        window.onresize = function() {
+            var hintElement = document.querySelector('#hint');
+            adjustFontSize(hintElement);
+        };
+    </script>
 </head>
 <body>
-    <div>{{ hint }}</div>
+    <div id="hint">{{ hint }}</div>
 </body>
 </html>
