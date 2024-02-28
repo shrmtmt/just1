@@ -1,24 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Guesser Page</title>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            font-family: 'Arial', 'Helvetica', sans-serif;
-        }
-        #countdown {
-            white-space: nowrap;
-        }
-    </style>
+    <title>Guesser</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <script>
         function adjustFontSize(element) {
             var fontSize = Math.min(window.innerWidth / element.textContent.length, window.innerHeight);
