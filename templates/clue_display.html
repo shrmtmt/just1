@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Clue Display</title>
+    <title>Clue Display Page</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        #hint {
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            margin: 20px;
+        }
+    </style>
+    <script>
+        function adjustFontSize(element) {
+            var fontSize = Math.min(window.innerWidth / element.textContent.length, window.innerHeight);
+            element.style.fontSize = fontSize + 'px';
+        }
+
+        window.onload = function () {
+            var hintElement = document.querySelector('#hint');
+            hintElement.textContent = "{{ hint }}";
+            adjustFontSize(hintElement);
+        };
+
+        window.onresize = function() {
+            var hintElement = document.querySelector('#hint');
+            adjustFontSize(hintElement);
+        };
+    </script>
 </head>
 <body>
-    <div id="hint">{{ hint }}</div>
+    <div class="container">
+        <div id="hint"></div>
+    </div>
 </body>
 </html>

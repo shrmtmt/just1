@@ -1,41 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Guesser</title>
+    <title>Guesser Page</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <script>
-        function adjustFontSize(element) {
-            var fontSize = Math.min(window.innerWidth / element.textContent.length, window.innerHeight);
-            element.style.fontSize = fontSize + 'px';
+    <style>
+        #countdown {
+            font-size: 5vw;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
+        #message {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <script>
+        function showCountdown() {
+            var countdownElement = document.getElementById('countdown');
+            var word = "{{ word }}";
+            var counter = 3;
 
-        function startCountdown(seconds, display, word) {
-            var counter = seconds;
+            countdownElement.textContent = counter;
             var interval = setInterval(function() {
-                display.textContent = counter;
-                adjustFontSize(display);
                 counter--;
-                if (counter < 0) {
+                if (counter > 0) {
+                    countdownElement.textContent = counter;
+                } else {
                     clearInterval(interval);
-                    display.textContent = word;
-                    adjustFontSize(display);
+                    countdownElement.textContent = word;
                 }
             }, 1000);
         }
 
         window.onload = function () {
-            var display = document.querySelector('#countdown');
-            var word = "{{ word }}";
-            startCountdown(3, display, word);
-        };
+            var messageElement = document.getElementById('message');
+            messageElement.textContent = "Guesser, look away.";
 
-        window.onresize = function() {
-            var display = document.querySelector('#countdown');
-            adjustFontSize(display);
+            setTimeout(function() {
+                messageElement.style.display = 'none';
+                showCountdown();
+            }, 1000);
         };
     </script>
 </head>
 <body>
-    <div id="countdown">3</div>
+    <div id="message"></div>
+    <div id="countdown"></div>
 </body>
 </html>

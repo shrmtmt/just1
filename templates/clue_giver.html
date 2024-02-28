@@ -3,11 +3,27 @@
 <head>
     <title>Clue Giver</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        input[type="text"], input[type="submit"] {
+            font-size: 10vw;
+            margin: 10px 0;
+            padding: 20px;
+            width: 100%;
+        }
+        @media (max-width: 600px) {
+            input[type="text"], input[type="submit"] {
+                font-size: 10vw;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <form action="{{ url_for('clue_giver') }}" method="post">
-        <input type="text" name="hint" required>
-        <input type="submit" value="Submit">
-    </form>
+    <div class="container">
+        <form action="{{ url_for('clue_giver') }}" method="post">
+            <input type="text" name="hint" required>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </body>
 </html>
