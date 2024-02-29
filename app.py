@@ -12,7 +12,7 @@ words = load_words()
 
 @app.route('/')
 def index():
-    measurement_id = os.environ.get('GTAG')
+    measurement_id = os.getenv('GTAG')
     return render_template('index.html', measurement_id=measurement_id)
 
 @app.route('/guesser')
