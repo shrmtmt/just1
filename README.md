@@ -1,6 +1,6 @@
 # README
 
-This is the [Just One](https://just1.onrender.com/) games source code.
+This is the [Just One](https://just1.onrender.com/) game's source code.
 
 This web app was created with the purpose of playing the Just One game face-to-face, without using the Just One card deck.
 

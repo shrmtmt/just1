@@ -12,7 +12,7 @@ words = load_words()
 
 @app.route('/')
 def index():
-    measurement_id = os.getenv('GTAG')
+    measurement_id = os.getenv('GTAG', 'G-LD9500Y7G4')
     return render_template('index.html', measurement_id=measurement_id)
 
 @app.route('/guesser')
@@ -38,4 +38,4 @@ def how_to_play():
     return render_template('how_to_play.html', rules=rules)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
