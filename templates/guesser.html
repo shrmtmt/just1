@@ -16,10 +16,8 @@
     </style>
     <script>
         function adjustFontSize(element, isMessage = false) {
-            // メッセージの場合、文字数で割る数を調整
             var divisor = isMessage ? element.textContent.length / 2 : element.textContent.length;
             var fontSize = Math.min(window.innerWidth / divisor, window.innerHeight);
-            // カウントダウンの数字のサイズを80%に調整
             if (!isMessage) {
                 fontSize *= 0.8;
             }
@@ -46,7 +44,7 @@
 
         window.onload = function () {
             var messageElement = document.getElementById('message');
-            messageElement.textContent = "Guesser,\nlook away.";
+            messageElement.innerHTML = "Guesser,<br>look away.";
             adjustFontSize(messageElement, true);
 
             setTimeout(function() {
