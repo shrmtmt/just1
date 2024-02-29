@@ -13,13 +13,16 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+        #message {
+            font-size: 4em;
+        }
     </style>
     <script>
         function adjustFontSize(element, isMessage = false) {
             var divisor = isMessage ? element.textContent.length / 2 : element.textContent.length;
             var fontSize = Math.min(window.innerWidth / divisor, window.innerHeight);
             if (!isMessage) {
-                fontSize *= 1.5;
+                fontSize *= 1;
             }
             element.style.fontSize = fontSize + 'px';
         }
