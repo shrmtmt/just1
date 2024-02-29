@@ -1,9 +1,13 @@
 # README
 
-This is the [Flask](http://flask.pocoo.org/) [quick start](http://flask.pocoo.org/docs/1.0/quickstart/#a-minimal-application) example for [Render](https://render.com).
+This is the [Just One](https://just1.onrender.com/) games source code.
 
-The app in this repo is deployed at [https://flask.onrender.com](https://flask.onrender.com).
+This web app was created with the purpose of playing the Just One game face-to-face, without using the Just One card deck.
+
+You can play with your favorite word list by replacing the words in words.txt.
 
 ## Deployment
 
-Follow the guide at https://render.com/docs/deploy-flask.
+Lightweight enough to run on render's free server.
+
+Follow the guide at https://render.com/docs/deploy-flask to run it on render.
