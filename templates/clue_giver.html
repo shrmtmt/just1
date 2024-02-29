@@ -12,10 +12,10 @@
             height: 100vh;
         }
         input[type="text"], input[type="submit"] {
-            font-size: 2em;
-            margin: 10px 0;
+            font-size: 4em; 
+            margin: 20px 0;
             padding: 20px;
-            width: 50%;
+            width: 60%; 
             text-align: center;
         }
         input[type="submit"] {
@@ -36,7 +36,7 @@
     <div class="container">
         <form action="{{ url_for('clue_giver') }}" method="post">
             <input type="text" name="hint" required>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Display">
         </form>
     </div>
 </body>
