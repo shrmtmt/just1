@@ -19,7 +19,7 @@
             var divisor = isMessage ? element.textContent.length / 2 : element.textContent.length;
             var fontSize = Math.min(window.innerWidth / divisor, window.innerHeight);
             if (!isMessage) {
-                fontSize *= 0.8;
+                fontSize *= 1.5;
             }
             element.style.fontSize = fontSize + 'px';
         }
@@ -50,7 +50,7 @@
             setTimeout(function() {
                 messageElement.style.display = 'none';
                 showCountdown();
-            }, 2000);
+            }, 3000);
         };
 
         window.onresize = function() {
