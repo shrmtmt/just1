@@ -11,33 +11,28 @@
             align-items: center;
             height: 100vh;
         }
-        input[type="text"], input[type="submit"] {
+        input[type="text"] {
             box-sizing: border-box;
             width: 60%;
             padding: 20px;
-            margin: 10px 0;
+            margin: 20px 0;
             text-align: center;
         }
-        input[type="submit"] {
-            cursor: pointer;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        input[type="submit"]:hover {
-            background-color: #555;
-            transform: scale(1.1);
-        }
     </style>
+    <script>
+        function redirectToClueDisplay() {
+            var hintInput = document.getElementById('hintInput');
+            var hint = hintInput.value.trim();
+
+            if (hint) {
+                window.location.href = "{{ url_for('clue_display', hint='') }}" + hint;
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <form action="{{ url_for('clue_giver') }}" method="post">
-            <input type="text" name="hint" required>
-            <input type="submit" value="Display">
-        </form>
+        <input type="text" id="hintInput" onfocusout="redirectToClueDisplay()" required>
     </div>
 </body>
 </html>
