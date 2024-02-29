@@ -1,3 +1,5 @@
+
+
 "Just One" is a cooperative party game.
 
 3 or more participants required.
@@ -19,3 +21,5 @@ If he/she cannot figure it out, he/she may show the duplicate hint or tell him/h
 When the guesser has finished answering, the guesser is switched to the next participant.
 
 If there are just three participants, each "Clue giver" may give two clues each.
+
+

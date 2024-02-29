@@ -19,6 +19,10 @@
             // メッセージの場合、文字数で割る数を調整
             var divisor = isMessage ? element.textContent.length / 2 : element.textContent.length;
             var fontSize = Math.min(window.innerWidth / divisor, window.innerHeight);
+            // カウントダウンの数字のサイズを80%に調整
+            if (!isMessage) {
+                fontSize *= 0.8;
+            }
             element.style.fontSize = fontSize + 'px';
         }
 

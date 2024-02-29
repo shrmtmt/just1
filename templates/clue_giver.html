@@ -4,47 +4,40 @@
     <title>Clue Giver Page</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <style>
-        .input-group {
+        .container {
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            width: 100%;
-            margin-top: 20px;
+            height: 100vh;
         }
-        input[type="text"] {
-            font-size: 2vw;
+        input[type="text"], input[type="submit"] {
+            font-size: 2em;
+            margin: 10px 0;
             padding: 20px;
-            margin-bottom: 20px;
-            width: 80%; /* インプットボックスの幅を画面幅の80%に設定 */
-            text-align: center; /* テキストを中央寄せに */
-            background-color: #333; /* インプットボックスの背景色を濃いグレーに */
-            color: white; /* 文字色を白に */
-            border: none;
-            border-radius: 5px;
+            width: 50%;
+            text-align: center;
         }
         input[type="submit"] {
-            font-size: 2vw;
-            padding: 20px 40px;
-            width: 80%; /* ボタンの幅を画面幅の80%に設定 */
             cursor: pointer;
-            background-color: #333; /* ボタンの背景色 */
-            color: white; /* ボタンの文字色 */
+            background-color: #333;
+            color: white;
             border: none;
-            border-radius: 10px;
+            border-radius: 5px;
             transition: background-color 0.3s, transform 0.3s;
         }
         input[type="submit"]:hover {
-            background-color: #555; /* ホバー時の背景色 */
-            transform: scale(1.1); /* ホバー時の拡大効果 */
+            background-color: #555;
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="input-group">
+        <form action="{{ url_for('clue_display') }}" method="post">
             <input type="text" name="hint" required>
             <input type="submit" value="Submit">
-        </div>
+        </form>
     </div>
 </body>
 </html>
