@@ -17,6 +17,7 @@
             padding: 20px;
             margin: 20px 0;
             text-align: center;
+            font-size: 2.5em; /* フォントサイズを2.5倍に */
             color: #333; /* テキストの色 */
         }
         input[type="text"]::placeholder {
@@ -29,14 +30,20 @@
             var hint = hintInput.value.trim();
 
             if (hint) {
-                window.location.href = "{{ url_for('clue_display', hint='') }}" + hint;
+                window.location.href = "{{ url_for('clue_display', hint='') }}" + encodeURIComponent(hint);
+            }
+        }
+
+        function handleEnterKey(event) {
+            if (event.key === 'Enter') {
+                redirectToClueDisplay();
             }
         }
     </script>
 </head>
 <body>
     <div class="container">
-        <input type="text" id="hintInput" onfocusout="redirectToClueDisplay()" placeholder="Type your hint here" autocomplete="off" required>
+        <input type="text" id="hintInput" onfocusout="redirectToClueDisplay()" onkeyup="handleEnterKey(event)" placeholder="Type your hint here" autocomplete="off" required>
     </div>
 </body>
 </html>
