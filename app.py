@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import random
+import os
 
 app = Flask(__name__)
 
@@ -11,7 +12,8 @@ words = load_words()
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    measurement_id = os.getenv('GTAG', '')
+    return render_template('index.html', measurement_id=measurement_id)
 
 @app.route('/guesser')
 def guesser():
