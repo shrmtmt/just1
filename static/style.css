@@ -24,6 +24,11 @@ h1 {
     margin-bottom: 20px;
 }
 
+h2 {
+    font-size: 4vw;
+    margin-bottom: 20px;
+}
+
 button {
     font-size: 3vw;
     padding: 20px 40px;
