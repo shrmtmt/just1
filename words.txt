@@ -2112,6 +2112,7 @@ Thyme
 Sage
 Rosemary
 Parsley
+Panda
 Tiger
 Giraffe
 Zebra
