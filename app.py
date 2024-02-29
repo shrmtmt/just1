@@ -37,6 +37,3 @@ def how_to_play():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
