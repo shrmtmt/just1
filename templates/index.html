@@ -3,6 +3,24 @@
 <head>
     <title>Just One</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        button {
+            font-size: 3.6vw;
+            padding: 24px 48px;
+            margin-bottom: 20px;
+        }
+        a.how-to-play {
+            color: white;
+            font-size: 2vw;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -10,6 +28,7 @@
         <div class="button-group">
             <a href="{{ url_for('guesser') }}"><button>Guesser</button></a>
             <a href="{{ url_for('clue_giver') }}"><button>Clue Giver</button></a>
+            <a href="{{ url_for('how_to_play') }}" class="how-to-play">[How to play]</a>
         </div>
     </div>
 </body>

@@ -4,16 +4,10 @@
     <title>Guesser Page</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <style>
-        #countdown {
-            font-size: 5vw;
+        #message, #countdown {
             text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        #message {
-            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -21,31 +15,49 @@
         }
     </style>
     <script>
+        function adjustFontSize(element, isMessage = false) {
+            // メッセージの場合、文字数で割る数を調整
+            var divisor = isMessage ? element.textContent.length / 2 : element.textContent.length;
+            var fontSize = Math.min(window.innerWidth / divisor, window.innerHeight);
+            element.style.fontSize = fontSize + 'px';
+        }
+
         function showCountdown() {
             var countdownElement = document.getElementById('countdown');
             var word = "{{ word }}";
             var counter = 3;
 
-            countdownElement.textContent = counter;
             var interval = setInterval(function() {
-                counter--;
                 if (counter > 0) {
                     countdownElement.textContent = counter;
+                    adjustFontSize(countdownElement);
+                    counter--;
                 } else {
                     clearInterval(interval);
                     countdownElement.textContent = word;
+                    adjustFontSize(countdownElement);
                 }
             }, 1000);
         }
 
         window.onload = function () {
             var messageElement = document.getElementById('message');
-            messageElement.textContent = "Guesser, look away.";
+            messageElement.textContent = "Guesser,\nlook away.";
+            adjustFontSize(messageElement, true);
 
             setTimeout(function() {
                 messageElement.style.display = 'none';
                 showCountdown();
             }, 1000);
+        };
+
+        window.onresize = function() {
+            var messageElement = document.getElementById('message');
+            var countdownElement = document.getElementById('countdown');
+            if (messageElement.style.display !== 'none') {
+                adjustFontSize(messageElement, true);
+            }
+            adjustFontSize(countdownElement);
         };
     </script>
 </head>
