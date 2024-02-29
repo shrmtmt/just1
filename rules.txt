@@ -1,0 +1,21 @@
+"Just One" is a cooperative party game.
+
+3 or more participants required.
+
+One person becomes the "Guesser" and the others become "Clue givers".
+A secret answer is given, and the "Guesser" can not look at the secret answer and the "Clue giver's clue".
+
+The "Clue giver" thinks of a clue by which the guesser can guess the secret answer.
+Clues must be a only one word.
+
+Once all "Clue givers" have decided on a clue, the clue givers show their clues to each other except "Guesser".
+
+If there are duplicate clues, those clues cannot be shown to the "Guesser".
+
+Once the duplicate hints have been eliminated, the "Guesser" can see the remaining hints and guesses the secret answer.
+
+If he/she cannot figure it out, he/she may show the duplicate hint or tell him/her the first letter of the clue. (It's a party game.)
+
+When the guesser has finished answering, the guesser is switched to the next participant.
+
+If there are just three participants, each "Clue giver" may give two clues each.

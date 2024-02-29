@@ -29,5 +29,14 @@ def clue_giver():
 def clue_display(hint):
     return render_template('clue_display.html', hint=hint)
 
+@app.route('/how_to_play')
+def how_to_play():
+    with open('rules.txt', 'r') as file:
+        rules = file.read()
+    return render_template('how_to_play.html', rules=rules)
+
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
