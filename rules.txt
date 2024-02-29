@@ -5,9 +5,9 @@ One person is the "Guesser"🤔. The others are "Clue Givers"🕵️‍♂️�
 
 "Clue Givers" think of one word💭. This word helps the "Guesser" guess the secret word.
 
-After thinking, "Clue Givers" show their words to each other. But they do not show them to the "Guesser"🙈.
+After thinking, "Clue Givers" show their words to each other. But they do not show them to the "Guesser" yet🙈.
 
-If two or more "Clue Givers" have the same word, they do not show this word🤐.
+If two or more "Clue Givers" have the same word, these clue can't be seen🤐.
 
 Then, it's the "Guesser's" turn to see the clue words.
 
