@@ -12,6 +12,9 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh; /* Full viewport height */
+    padding-top: 10vh; /* Adjust as needed */
+    padding-bottom: 10vh; /* Adjust as needed */
 }
 
 .button-group {
