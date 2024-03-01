@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="{{ url_for('static', filename='pictures/Slide' + slide_num + '.PNG') }}" alt="Slide {{ slide_num }}">
+        <img src="{{ url_for('static', filename='pictures/Slide' ~ slide_num ~ '.PNG') }}" alt="Slide {{ slide_num }}">
         <div class="button-container">
             <a href="{{ url_for('index') }}"><button>Home</button></a>
             {% if next_slide_num %}
