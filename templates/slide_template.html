@@ -12,14 +12,18 @@
     </script>
     <!-- Other head elements -->
     <title>How to Play</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
+        <!-- Dynamic image loading based on slide number -->
         <img src="{{ url_for('static', filename='pictures/Slide' ~ slide_num ~ '.PNG') }}" alt="Slide {{ slide_num }}">
+
+        <!-- Navigation buttons -->
         <div class="button-container">
             <a href="{{ url_for('index') }}"><button>Home</button></a>
             {% if next_slide_num %}
-            <a href="{{ url_for('slide', num=next_slide_num) }}"><button>Next</button></a>
+                <a href="{{ url_for('slide', num=next_slide_num) }}"><button>Next</button></a>
             {% endif %}
         </div>
     </div>
