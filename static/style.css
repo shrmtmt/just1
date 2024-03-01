@@ -36,12 +36,12 @@ body, html {
 
 h1 {
     font-size: 8vw;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 h2 {
     font-size: 4vw;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 button {
@@ -74,6 +74,6 @@ input[type="text"], input[type="submit"] {
         width: 80%;
     }
     .button-container {
-        flex-direction: row; /* Keeps buttons in a row on small screens */
+        flex-direction: row;
     }
 }
