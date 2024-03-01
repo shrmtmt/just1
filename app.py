@@ -42,4 +42,4 @@ def slide(num):
     return render_template('slide_template.html', slide_num=num)
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
