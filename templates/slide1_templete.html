@@ -12,22 +12,16 @@
     </script>
     <!-- Other head elements -->
     <title>How to Play</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <style>
-        .rules-text {
-            white-space: pre-wrap;
-            font-size: 2em;
-        }
-        button {
-            font-size: 4em;
-            padding: 20px 40px;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
-        <div class="rules-text">{{ rules|safe }}</div>
-        <a href="{{ url_for('index') }}"><button>Back</button></a>
+        <img src="{{ url_for('static', filename='pictures/Slide' + slide_num + '.PNG') }}" alt="Slide {{ slide_num }}">
+        <div class="button-container">
+            <a href="{{ url_for('index') }}"><button>Home</button></a>
+            {% if slide_num != '7' %}
+            <a href="{{ url_for('slide', num=int(slide_num)+1) }}"><button>Next</button></a>
+            {% endif %}
+        </div>
     </div>
 </body>
 </html>

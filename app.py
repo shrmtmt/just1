@@ -31,11 +31,15 @@ def clue_giver():
 def clue_display(hint):
     return render_template('clue_display.html', hint=hint)
 
-@app.route('/how_to_play')
+@app.route('/rules')
 def how_to_play():
     with open('rules.txt', 'r') as file:
         rules = file.read()
-    return render_template('how_to_play.html', rules=rules)
+    return render_template('rules.html', rules=rules)
+
+@app.route('/slide/<num>')
+def slide(num):
+    return render_template('slide_template.html', slide_num=num)
 
 if __name__ == '__main__':
     app.run(debug=False)
