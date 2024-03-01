@@ -19,6 +19,17 @@ body, html {
     justify-content: center;
 }
 
+.button-container {
+    display: flex;
+    /* justify-content: center; */
+    justify-content: center;
+}
+
+.rules-text {
+    max-width: 80%;
+    margin: auto; /* Centers the text block */
+}
+
 h1 {
     font-size: 8vw;
     margin-bottom: 20px;
@@ -57,5 +68,8 @@ input[type="text"], input[type="submit"] {
     input[type="text"], input[type="submit"] {
         font-size: 4vw;
         width: 80%;
+    }
+    .button-container {
+        flex-direction: row; /* Keeps buttons in a row on small screens */
     }
 }
