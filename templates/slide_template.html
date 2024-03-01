@@ -38,12 +38,30 @@
         .button-container a {
             margin: 0 10px;
         }
+        .text-box {
+            border: 1px solid black;
+            width: 1056px;
+            height: 480px;
+            padding: 10px;
+            overflow: auto;
+            white-space: pre-wrap; /* Respects white space and line breaks */
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Dynamic image loading based on slide number -->
-        <img src="{{ url_for('static', filename='pictures/Slide' ~ slide_num ~ '.PNG') }}" alt="Slide {{ slide_num }}">
+        <!-- Conditionally display image or text based on slide number -->
+        {% if slide_num <= 7 %}
+            <img src="{{ url_for('static', filename='pictures/Slide' ~ slide_num ~ '.PNG') }}" alt="Slide {{ slide_num }}">
+        {% else %}
+            <div class="text-box">
+                Optional: If it's hard, the "Guesser" can get extra help😉. This can be a hidden word or the first letter of the "secret word". Remember, it's just a party game🎈.
+
+                Optional: With 3 people, each "Clue Giver" can give two clues✌️.
+
+                If you play on a phone📱, use the "Auto-rotate" setting on. It's better for the game👍.
+            </div>
+        {% endif %}
 
         <!-- Navigation buttons -->
         <div class="button-container">
@@ -55,4 +73,3 @@
     </div>
 </body>
 </html>
-

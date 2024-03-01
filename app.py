@@ -40,7 +40,7 @@ def how_to_play():
 @app.route('/slide/<num>')
 def slide(num):
     slide_num = str(int(num))
-    next_slide_num = str(int(num) + 1) if int(num) < 7 else None
+    next_slide_num = str(int(num) + 1) if int(num) < 8 else None
     return render_template('slide_template.html', slide_num=slide_num, next_slide_num=next_slide_num)
 
 if __name__ == '__main__':
