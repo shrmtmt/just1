@@ -14,22 +14,27 @@
     <title>How to Play</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <style>
-        body {
+        body, html {
+            height: 100%;
+            margin: 0;
             background-color: white; /* Sets the background to white */
         }
         .container {
-            width: 80%;
-            margin: auto;
-            text-align: center;
-        }
-        .button-container {
-            margin-top: 20px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
+            height: 100%;
         }
         img {
-            max-width: 100%;
+            max-width: 80%;
             height: auto;
+            margin-bottom: 20px; /* Space between image and buttons */
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
         }
     </style>
 </head>
