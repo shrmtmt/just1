@@ -1,4 +1,3 @@
-
 "Just One"🎉 is a fun game🃏 you play with friends. You need 3 or more people👨‍👩‍👧.
 
 One person is the "Guesser"🤔. The others are "Clue Givers"🕵️‍♂️🕵️‍♀️. There is a "secret word"🔒. The "Guesser" can't see this word.
@@ -10,5 +9,3 @@ If two or more "Clue Givers" have the same word, these clue can't be seen🤐.
 Then, it's the "Guesser's" turn to see the clue words.
 The "Guesser" looks at these words and tries to guess the "secret word"🧐.
 When the "Guesser" answers or gives up, the next person becomes the "Guesser"🔄.
-
-
