@@ -61,13 +61,13 @@
         <!-- Conditionally display image or text based on slide number -->
         {% if slide_num == 0 %}
             <div class="text-box">
-                {{ rules|safe }}
+                <iframe src="static\text\rules1.txt"></iframe>
             </div>
         {% elif slide_num <= 7 %}
             <img src="{{ url_for('static', filename='pictures/Slide' ~ slide_num ~ '.PNG') }}" alt="Slide {{ slide_num }}">
         {% else %}
             <div class="text-box">
-                {{ rules|safe }}
+                <iframe src="static\text\rules2.txt"></iframe>
             </div>
         {% endif %}
 
