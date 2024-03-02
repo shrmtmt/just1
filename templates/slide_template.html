@@ -39,20 +39,30 @@
             margin: 0 10px;
         }
         .text-box {
-            font-family: 'Congenial', sans-serif; /* Apply Congenial font */
-            border: none; /* No border */
-            color: black; /* Black text color */
+            font-family: 'Congenial', sans-serif;
+            border: none;
+            color: black;
             width: 1056px;
             height: 480px;
             margin: 0px;
             padding: 0px;
             overflow: auto;
-            white-space: pre-wrap; /* Respects white space and line breaks */
+            white-space: pre-wrap;
             display: flex;
-            align-items: center; /* Vertical center alignment */
-            justify-content: flex-start; /* Align content to the start (left) */
-            text-align: left; /* Left aligned text */
-            font-size: 1.5em; /* Larger font size */
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+            font-size: 1.5em;
+        }
+        .text-box iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            font-family: 'Congenial', sans-serif;
+            color: black;
+            text-align: left;
+            font-size: 1.5em;
+            overflow: auto;
         }
     </style>
 </head>
@@ -67,7 +77,7 @@
             <img src="{{ url_for('static', filename='pictures/Slide' ~ slide_num ~ '.PNG') }}" alt="Slide {{ slide_num }}">
         {% else %}
             <div class="text-box">
-                <iframe src="/static/text/rules1.txt"></iframe>
+                <iframe src="/static/text/rules2.txt"></iframe>
             </div>
         {% endif %}
 static\text\rules1.txt
