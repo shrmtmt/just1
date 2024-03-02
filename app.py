@@ -39,10 +39,10 @@ def how_to_play():
 
 @app.route('/slide/<num>')
 def slide(num):
-    if num == 0:
+    if num == "0":
         with open('static/text/rules1.txt', 'r') as file:
             rules = file.read()
-    elif num == 8:
+    elif num == "8":
         with open('static/text/rules2.txt', 'r') as file:
             rules = file.read()
     else:
