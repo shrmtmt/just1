@@ -48,8 +48,8 @@ def slide(num):
     else:
         rules = None
     
-    slide_num = str(int(num))
-    next_slide_num = str(int(num) + 1) if int(num) < 8 else None
+    slide_num = int(num)  # Convert num to integer
+    next_slide_num = slide_num + 1 if slide_num < 8 else None
     return render_template('slide_template.html', slide_num=slide_num, next_slide_num=next_slide_num, rules=rules)
 
 if __name__ == '__main__':
