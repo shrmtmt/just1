@@ -89,5 +89,17 @@ static\text\rules1.txt
             {% endif %}
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const iframe = document.querySelector('.text-box iframe');
+            if (iframe) {
+                iframe.onload = function() {
+                    const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+                    const body = iframeDocument.body;
+                    body.style.fontSize = '1.5em';
+                };
+            }
+        });
+    </script>
 </body>
 </html>
