@@ -33,9 +33,9 @@ def clue_display(hint):
 
 @app.route('/rules')
 def how_to_play():
-    with open('static/txt/rules1.txt', 'r') as file:
+    with open('static/text/rules1.txt', 'r') as file:
         rules1 = file.read()
-    with open('static/txt/rules2.txt', 'r') as file:
+    with open('static/text/rules2.txt', 'r') as file:
         rules2 = file.read()
     return render_template('rules.html', rules=rules)
 
