@@ -37,7 +37,7 @@ def how_to_play():
         rules1 = file.read()
     with open('static/text/rules2.txt', 'r') as file:
         rules2 = file.read()
-    return render_template('rules.html', rules=rules)
+    return render_template('rules.html', rules1=rules1, rules2=rules2)
 
 @app.route('/slide/<num>')
 def slide(num):
