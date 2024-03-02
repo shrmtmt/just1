@@ -59,11 +59,15 @@
 <body>
     <div class="container">
         <!-- Conditionally display image or text based on slide number -->
-        {% if slide_num|int <= 7 %}
+        {% if slide_num == 0 %}
+            <div class="rules-text">
+                {{ rules|safe }}
+            </div>
+        {% elif slide_num <= 7 %}
             <img src="{{ url_for('static', filename='pictures/Slide' ~ slide_num ~ '.PNG') }}" alt="Slide {{ slide_num }}">
         {% else %}
-            <div class="text-box">
-                {{ rules2|safe }}
+            <div class="rules-text">
+                {{ rules|safe }}
             </div>
         {% endif %}
 

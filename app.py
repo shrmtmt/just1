@@ -39,11 +39,16 @@ def how_to_play():
 
 @app.route('/slide/<num>')
 def slide(num):
-    with open('static/text/rules2.txt', 'r') as file:
-        rules2 = file.read()
+    if num == 0:
+        with open('static/text/rules1.txt', 'r') as file:
+            rules = file.read()
+    elif: num == 8:
+        with open('static/text/rules2.txt', 'r') as file:
+            rules = file.read()
+    
     slide_num = str(int(num))
     next_slide_num = str(int(num) + 1) if int(num) < 8 else None
-    return render_template('slide_template.html', slide_num=slide_num, next_slide_num=next_slide_num, rules2=rules2)
+    return render_template('slide_template.html', slide_num=slide_num, next_slide_num=next_slide_num, rules=rules)
 
 if __name__ == '__main__':
     app.run(debug=True)
